@@ -43,6 +43,9 @@ group :development, :test do
   gem 'pry-doc'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
+  gem "jquery-rails"
+  gem 'bcrypt'
+  gem "carrierwave"
 end
 
 group :development do
