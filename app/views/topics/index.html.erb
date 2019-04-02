@@ -1,6 +1,6 @@
 <div class="topic-index-wrapper">
   <div class="container">
-    <%= @topics.each do |topic| %>
+    <% @topics.each do |topic| %>
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <div class="topic-index-single">
@@ -22,12 +22,20 @@
             <% end %>
             <%= topic.favorite_users.count %>
 
-            <%= link_to "投稿削除", topic_path, method: :delete, class: "topic-text2" %>
+            <%= link_to new_topic_comment_path(topic_id: topic.id), method: :get do %>
+            <%= image_tag 'bluepencil.jpeg', class: 'topic-index-icon' %>
+            <% end %>
+            <%= link_to "投稿削除", topics_destroy_path(topic_id: topic.id), method: :delete, class: "topic-text2" %>
 
             <h2 class="topic-author">レビュー</h2>
             <p class="topic-text2">
               <%= topic.description %>
             </p>
+            <% topic.comments.each do |comment| %>
+            <p class="topic-text2">
+            <%= topic.user.name %> <%= comment.content %>
+            </p>
+          <% end %>
 
           </div>
         </div>

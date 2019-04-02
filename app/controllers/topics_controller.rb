@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all.includes(:favorite_users)
+    
   end
 
   def new
@@ -19,7 +20,7 @@ end
 end
 
 def destroy
-  @topic = Topic.find_by(id: params[:id])
+  @topic = Topic.find_by(id: params[:topic_id])
   @topic.destroy
   redirect_to topics_path, danger: '投稿を削除しました'
 end

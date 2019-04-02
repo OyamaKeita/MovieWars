@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+
   get 'topics/new'
   get 'sessions/new'
   get 'users/new'
+  get 'users/edit'
   get 'pages/index'
   root 'pages#index'
   get 'pages/help'
@@ -11,10 +13,13 @@ Rails.application.routes.draw do
   post   '/login',  to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :users
-  resources :topics
-
   get 'favorites/index'
   post '/favorites', to: 'favorites#create'
   delete 'favorites/destroy'
+  delete 'topics/destroy'
+
+  resources :users
+  resources :topics do
+  resources :comments
+end
 end
