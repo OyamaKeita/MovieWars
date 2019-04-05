@@ -45,11 +45,7 @@
       font-size: 20px;
     }
 
-    .topic-text {
-      padding-right: 20px;
-      padding-left: 20px;
-      font-size: 30px;
-    }
+
 
     .topic-text2 {
       padding-right: 20px;
@@ -68,4 +64,15 @@
       margin-left: 20px;
     }
   }
+}
+
+.topic-text {
+  padding-right: 20px;
+  padding-left: 0px;
+  font-size: 40px;
+}
+
+.topic-index-icon2 {
+  width: 35px;
+  height: 30px;
 }

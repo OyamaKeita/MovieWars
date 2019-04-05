@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     #binding.pry
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, success: '登録完了！'
+      redirect_to root_path, success: '登録完了'
     else
       flash.now[:danger] = '登録失敗'
       render :new
@@ -15,12 +15,23 @@ class UsersController < ApplicationController
 end
 
 def show
-  @user = User.all
+  @user = User.find(session[:user_id])
 end
 
 def edit
-  @user = User.find_by(id: params[:user_id])
+  @user = User.find(session[:user_id])
 end
+
+def update
+  @user = User.find(session[:user_id])
+  if @user.update(user_params)
+    redirect_to user_path, success: '更新完了'
+  else
+    flash.now[:danger] = '更新失敗'
+    render :edit
+  end
+end
+
 
 private
 def user_params

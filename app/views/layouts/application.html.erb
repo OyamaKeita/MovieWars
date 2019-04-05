@@ -21,6 +21,12 @@
         <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
         <li>
+          <%= link_to "Myプロフィール", users_show_path, class: "text-top" %>
+          </li>
+          <li>
+            <%= link_to "プロフィール編集", users_edit_path, class: "text-top" %>
+            </li>
+        <li>
           <%= link_to "投稿一覧",topics_path, class: "text-top" %>
           <li>
             <%= link_to "投稿", new_topic_path, class: "text-top" %>
@@ -31,7 +37,8 @@
           <li>
             <%= link_to "ログアウト", logout_path, method: :delete, class: "text-top" %>
             <% end %>
-          </li>
+            </li>
+
 
         </ul>
       </div>
@@ -43,5 +50,6 @@
         $(".alert").fadeOut(5000);
       });
     </script>
+    
   </body>
 </html>

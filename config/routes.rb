@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'users/new'
   get 'users/edit'
+  get 'users/show'
   get 'pages/index'
   root 'pages#index'
   get 'pages/help'
