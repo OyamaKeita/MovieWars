@@ -29,10 +29,10 @@
         <li>
           <%= link_to "投稿一覧",topics_path, class: "text-top" %>
           <li>
-            <%= link_to "投稿", new_topic_path, class: "text-top" %>
+            <%= link_to "投稿する", new_topic_path, class: "text-top" %>
             </li>
           <li>
-            <%= link_to "いいね", favorites_index_path, class: "text-top" %>
+            <%= link_to "いいね一覧", favorites_index_path, class: "text-top" %>
             </li>
           <li>
             <%= link_to "ログアウト", logout_path, method: :delete, class: "text-top" %>
@@ -50,6 +50,6 @@
         $(".alert").fadeOut(5000);
       });
     </script>
-    
+
   </body>
 </html>
