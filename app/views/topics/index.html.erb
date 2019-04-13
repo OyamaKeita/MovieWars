@@ -1,4 +1,5 @@
 <div class="topic-index-wrapper">
+  <h1 class="topic-text3">投稿一覧</h1>
   <div class="container">
     <% @topics.each do |topic| %>
       <div class="row">
@@ -34,7 +35,7 @@
         <%= image_tag 'movie.png', class: 'topic-index-icon2' %> <%= topic.title %>
       </p>
       <h2 class="topic-author"><%= image_tag 'call-out.png', class: 'topic-index-icon2' %>レビュー</h2>
-      
+
 
       <p class="topic-text2">
         <%= topic.description %>

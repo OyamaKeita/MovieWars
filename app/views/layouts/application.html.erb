@@ -17,6 +17,9 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
       <div class="container">
         <%= link_to "MovieWars", root_path, class: "text-top" %>
+        <%= link_to root_path, method: :get do %>
+        <%= image_tag 'pirates.png', class: 'topic-index-icon' %>
+        <% end %>
 
         <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
