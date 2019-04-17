@@ -42,6 +42,11 @@
       </p>
       <% topic.comments.each do |comment| %>
         <p class="topic-text2">
+          <% if @user.image? %>
+          <%= image_tag @user.image.url, class:"form-control3" %>
+          <% else %>
+          <%= image_tag "no-image.png", class:"form-control3" %>
+          <% end %>
           <%= comment.user.name %>
           <%= comment.content %>
         </p>

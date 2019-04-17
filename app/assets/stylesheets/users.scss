@@ -7,6 +7,16 @@
   height: 45px;
 }
 
+.form-control3 {
+  width: 30px;
+  height: 30px;
+}
+
+.form-control4 {
+  width: 200px;
+  height: 200px;
+}
+
 .users-new-wrapper {
   width: 100vw;
   height: 100vh;
@@ -33,5 +43,18 @@
 }
 
 .users-new-container2 {
+  padding-top: 110px;
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+}
+
+.users-new-container3 {
   padding-top: 0px;
+}
+
+.topic-author2 {
+  padding-right: 0px;
+  padding-left: 275px;
 }

@@ -36,6 +36,6 @@ def update
 
 private
 def user_params
-  params.require(:user).permit(:name, :email, :password, :password_confirmation, :age, :sex)
+  params.require(:user).permit(:name, :email, :password, :password_confirmation, :age, :sex, :image)
 end
 end
