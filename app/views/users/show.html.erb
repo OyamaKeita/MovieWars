@@ -14,19 +14,32 @@
             <h3 class="text-center text-white">
               <p class="text-white">プロフィール画像</p></h3>
               <div class="text-center">
-              <%= image_tag @user.image.url, class:"form-control4" %>
+                <% if @user.image? %>
+                <%= image_tag @user.image.url, class:"form-control4" %>
+                <% else %>
+                <%= image_tag "no-image.png", class:"form-control4" %>
+                <% end %>
+
               </div>
 
             <div class="row">
               <div class="col-md-6 users-new-container3">
             <h3 class="text-center text-white">
               <p class="text-white">年齢</p>
-              <%= @user.age %><a class="text-white">代</a></h3>
+              <% if @user.age? %>
+              <%= @user.age %></h3>
+              <% else %>
+              <h5 class="text-center text-white">設定されていません</h5>
+              <% end %>
               </div>
               <div class="col-md-6 users-new-container3">
               <h3 class="text-center text-white">
                 <p class="text-white">性別</p>
+                <% if @user.sex? %>
                 <%= @user.sex %></h3>
+                <% else %>
+                <h5 class="text-center text-white">設定されていません</h5>
+                <% end %>
               </div>
               </div>
 
